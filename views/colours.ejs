@@ -1,0 +1,77 @@
+<%- include ("partials/header") -%>
+
+
+    <div class="container has-text-centered">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters block">
+          <h1 class="is-size-2 is-danger">Hello!</h1>
+          <h2 class="block is-size-5">Welcome to The Colour Game.</h2>
+  
+  
+          <!-- Creating the dropdown choose animal -->
+          <section id="dropdown" class="block">
+            <label for="list">Choose an animal: </label>
+            <select id="chooseAnimal" class="block has-text-centered">
+              <option value="bear">Bear</option>
+              <option value="giraffe">Giraffe</option>
+              <option value="narwhal">Narwhal</option>
+              <option value="mouse">Mouse</option>
+            </select>
+          </section>
+          <!-- instructions to play -->
+          <h2 id="instruction" class="block is-size-4">
+            Click the
+            <span id="colour" class="is-uppercase is-size-3">?</span> Button!
+          </h2>
+
+        
+          
+
+          <!-- correct/wrong images -->
+          <figure id="correct" class="block has-text-centered">
+            <img id="animalImage" src="images/bear.png" width="20%" />
+            <img src="images/thumbsup.png" width="20%" />
+          </figure>
+
+          <div id="wrong" class="block has-text-centered">
+            <img
+              src="https://media.istockphoto.com/vectors/try-again-vector-hand-drawn-illustration-with-cartoon-lettering-good-vector-id1182313635?k=20&m=1182313635&s=612x612&w=0&h=toLZUQHqj58aetcXbUGqgbY9Eu6dJ63kUwNiFym03dQ="
+              width="20%"
+            /><img src="images/thumbsdown.png" width="20%" />
+          </div>
+
+
+          <div class="columns is-mobile" id="colourButtons">
+
+<figure class="column image is-128x128">
+  <img src="images/yellow.png" class="button is-ghost block px-0 py-0" id="Yellow">
+  <img src="images/green.png" class="button is-ghost block px-0 py-0" id="Green">
+  <img src="images/red.png" class="button is-ghost block px-0 py-0 " id="Red">
+
+</figure>
+
+<figure class="column image is-128x128" >
+  <img src="images/black.png"class="button is-ghost block px-0 py-0 "  id="Black">
+  <img src="images/pink.png" class="button is-ghost px-0 py-0 block" id="Pink">
+  <img src="images/blue.png" class="button is-ghost px-0 py-0 block" id="Blue">
+
+</figure>
+<figure class="column image is-128x128">
+
+  <img src="images/orange.png" class="button is-ghost px-0 py-0 block" id="Orange">
+  <img src="images/white.png" class="button is-ghost px-0 py-0 block" id="White">
+  <img src="images/purple.png" class="button is-ghost px-0 py-0 block" id="Purple">
+
+
+</figure>
+
+          </div>
+          <p class="block">
+            <button id="reset" class="button is-size-7">PLAY AGAIN! (PLEASE)</button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+  </html>
