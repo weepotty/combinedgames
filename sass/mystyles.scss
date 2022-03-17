@@ -4,23 +4,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
 
 // Set your brand colors
-$dark-blue: #002366;
-$peach: #fa8072;
-$electric-blue: #0f52ba;
-$peach-light: #ffdab9;
-$pale-blue: #517ec0;
-
+$dark-orange: #E27D60; //primary
+$light-blue: #89dceb; // light
+$light-orange: #e8a87c; // info
+$dusky-pink: #c38d9e; // danger
+$mint-green: #6cc493; // success
+$darker-green: #41b3a3; // link
+$amber: rgb(255, 208, 0); // warning
+$white: white;
+$light-beige: rgb(233, 228, 220); //success
 // Update Bulma's global variables
 $family-sans-serif: 'Mali', cursive;
-$grey-dark: $electric-blue;
-$grey-light: $peach-light;
-$primary: $dark-blue;
-$link: $peach;
+$primary: $dark-orange;
+$link: $light-beige;
+$success: $darker-green;
+$info: $light-orange;
+$danger: $dusky-pink;
+$warning: $amber;
+$white: $white;
+$light: $light-blue;
+
+//link, info, success, warning, danger, primary, dark, light, black, white
+//black bis, black ter, grey darker, grey light, grey lighter, white ter, white bis
+
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: $electric-blue;
+$body-background-color: $light;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;

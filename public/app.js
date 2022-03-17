@@ -48,6 +48,7 @@ function buton(e) {
   }
 }
 
+
 reset.addEventListener("click", function () {
   location.reload();
 });
@@ -57,3 +58,15 @@ function imageChange() {
   document.getElementById("animalImage").src = `images/${this.value}.png`;
 }
 document.getElementById("chooseAnimal").onchange = imageChange;
+
+
+//code for hover
+function reduceOpacity(x) {
+  x.style.opacity = 0.8;
+  
+}
+
+function normalOpacity(x) {
+  x.style.opacity = 1.0;
+  
+}
