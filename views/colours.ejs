@@ -1,25 +1,30 @@
 <%- include ("partials/header") -%>
 
 
-    <div class="container has-text-centered">
-      <div class="columns is-centered">
-        <div class="column is-three-quarters block">
-          <h1 class="is-size-2 is-danger">Hello!</h1>
-          <h2 class="block is-size-5">Welcome to The Colour Game.</h2>
-  
-  
-          <!-- Creating the dropdown choose animal -->
-          <section id="dropdown" class="block">
-            <label for="list">Choose an animal: </label>
-            <select id="chooseAnimal" class="block has-text-centered">
-              <option value="bear">Bear</option>
-              <option value="giraffe">Giraffe</option>
-              <option value="narwhal">Narwhal</option>
-              <option value="mouse">Mouse</option>
-            </select>
-          </section>
+    
+      <div class="notification mx-5 mt-4 has-background-link has-text-centered">
+      
+          <div class="box has-background-pale-blue pt-0 mb-1">
+            <div class="is-size-2 has-text-link">Hello!</div>
+            <div class=" is-size-6 has-text-link">Welcome to The Colour Game.</div>
+            
+          
+            <!-- Creating the dropdown choose animal -->
+          
+            
+            <section id="dropdown" class="block">
+              <label for="list" class="has-text-dark-blue">Choose an animal: </label>
+              <select id="chooseAnimal" class="block has-text-centered">
+                <option value="bear">Bear</option>
+                <option value="giraffe">Giraffe</option>
+                <option value="narwhal">Narwhal</option>
+                <option value="mouse">Mouse</option>
+              </select>
+            </section>
+          </div>
+
           <!-- instructions to play -->
-          <h2 id="instruction" class="block is-size-4">
+          <h2 id="instruction" class="block has-text-white mb-1 is-size-4">
             Click the
             <span id="colour" class="is-uppercase is-size-3">?</span> Button!
           </h2>
@@ -39,39 +44,49 @@
               width="20%"
             /><img src="images/thumbsdown.png" width="20%" />
           </div>
+<!-- buttons end -->
+<p class="block">
+  <button id="reset" class="button is-size-7">PLAY AGAIN! (PLEASE)</button>
+</p>
+</div>
 
-
-          <div class="columns is-mobile" id="colourButtons">
-
-<figure class="column image is-128x128">
-  <img src="images/yellow.png" class="button is-ghost block px-0 py-0" id="Yellow">
-  <img src="images/green.png" class="button is-ghost block px-0 py-0" id="Green">
-  <img src="images/red.png" class="button is-ghost block px-0 py-0 " id="Red">
-
-</figure>
-
-<figure class="column image is-128x128" >
-  <img src="images/black.png"class="button is-ghost block px-0 py-0 "  id="Black">
-  <img src="images/pink.png" class="button is-ghost px-0 py-0 block" id="Pink">
-  <img src="images/blue.png" class="button is-ghost px-0 py-0 block" id="Blue">
-
-</figure>
-<figure class="column image is-128x128">
-
-  <img src="images/orange.png" class="button is-ghost px-0 py-0 block" id="Orange">
-  <img src="images/white.png" class="button is-ghost px-0 py-0 block" id="White">
-  <img src="images/purple.png" class="button is-ghost px-0 py-0 block" id="Purple">
-
-
-</figure>
-
+<div class="box mx-5 " id="colourButtons">
+  
+              <div class="notification has-background-white is-flex is-justify-content-space-evenly">
+  
+                  <img src="images/yellow.png" class="image is-64x64 " id="Yellow">
+                  <img src="images/green.png" class="image is-64x64  " id="Green">
+                  <img src="images/red.png" class="image is-64x64   " id="Red">
+  
+              </div>
+  
+              <div class="notification has-background-white is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
+                  <img src="images/black.png"class="image is-64x64  "  id="Black">
+                  <img src="images/pink.png" class="image is-64x64 " id="Pink">
+                  <img src="images/blue.png" class="image is-64x64 " id="Blue">
+  
+              </div>
+  
+              <div class="notification has-background-white is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
+                  <img src="images/orange.png" class="image is-64x64   " id="Orange">
+                  <img src="images/white.png" class="image is-64x64   " id="White">
+                  <img src="images/purple.png" class="image is-64x64   " id="Purple">
+  
+              </div>
+  
+  
+</div>
           </div>
-          <p class="block">
-            <button id="reset" class="button is-size-7">PLAY AGAIN! (PLEASE)</button>
-          </p>
-        </div>
+            
+          
+        
       </div>
-    </div>
+        </div>
+
+<!-- buttons start here -->
+          
+           
+    
     <script src="app.js"></script>
   </body>
   </html>

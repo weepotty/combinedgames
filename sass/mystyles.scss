@@ -1,17 +1,17 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
 
 // Set your brand colors
 $dark-blue: #002366;
 $peach: #fa8072;
 $electric-blue: #0f52ba;
 $peach-light: #ffdab9;
-$beige-lighter: #eff0eb;
+$pale-blue: #517ec0;
 
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: 'Mali', cursive;
 $grey-dark: $electric-blue;
 $grey-light: $peach-light;
 $primary: $dark-blue;
@@ -20,7 +20,7 @@ $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: $electric-blue;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
