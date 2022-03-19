@@ -116,7 +116,7 @@ function getMonster () {
 
 
 function getId(theme) {
-  
+   const chooseASticker = document.getElementById("chooseASticker")
   
   switch (true) {
         case (theme.id === "animals"): ; document.getElementById('dropdownAnimals').classList.remove("is-hidden")
@@ -127,7 +127,9 @@ function getId(theme) {
         break;
         case (theme.id === "enchanted"): document.getElementById("dropdownEnchanted").classList.remove("is-hidden")
         break;
-        case (theme.id === "monsters"): document.getElementById("chooseASticker").innerHTML = "Random Monster Generator"; getMonster () 
+        case (theme.id === "monsters"): chooseASticker.innerHTML = "Random Monster Generator"; chooseASticker.classList.add("is-size-5"); chooseASticker.classList.remove("is-size-3"); getMonster(); reset.addEventListener("click", function () {
+          getMonster();
+        })
         break;
         case (theme.id === "underTheSea"): document.getElementById("dropdownUnderTheSea").classList.remove("is-hidden")
     
