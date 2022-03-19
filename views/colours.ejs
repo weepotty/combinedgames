@@ -1,92 +1,119 @@
+
 <%- include ("partials/header") -%>
+<%- include ("partials/themes") -%>
+
 
 
     
-      <div class="notification mx-5 mt-4 has-background-success has-text-centered">
-      
-          <div class="box has-background-pale-blue pt-0 mb-1">
-            <div class="is-size-2 has-text-danger has-text-weight-bold">Hello!</div>
-            <div class=" is-size-6 has-text-danger">Welcome to The Colour Game.</div>
-            
-          
-            <!-- Creating the dropdown choose animal -->
-          
-            
-            <section id="dropdown" class="block">
-              <label for="list" class="has-text-dark-blue">Choose an animal: </label>
-              <select id="chooseAnimal" class="block has-text-centered">
-                <option value="bear">Bear</option>
-                <option value="giraffe">Giraffe</option>
-                <option value="narwhal">Narwhal</option>
-                <option value="mouse">Mouse</option>
-              </select>
-            </section>
-          </div>
-
-          <!-- instructions to play -->
-          <h2 id="instruction" class="block has-text-white mb-1 is-size-4">
-            Click the
-            <span id="colour" class="is-uppercase is-size-3">?</span> Button!
-          </h2>
-
+      <div id="gamePanel">
+        <div class="notification mx-5 mt-4 has-background-success has-text-centered">
         
-          
-
-          <!-- correct/wrong images -->
-          <figure id="correct" class="block has-text-centered">
-            <img id="animalImage" src="images/bear.png" width="20%" />
-            <img src="images/thumbsup.png" width="20%" />
-          </figure>
-
-          <div id="wrong" class="block has-text-centered">
-            <img
-              src="https://media.istockphoto.com/vectors/try-again-vector-hand-drawn-illustration-with-cartoon-lettering-good-vector-id1182313635?k=20&m=1182313635&s=612x612&w=0&h=toLZUQHqj58aetcXbUGqgbY9Eu6dJ63kUwNiFym03dQ="
-              width="20%"
-            /><img src="images/thumbsdown.png" width="20%" />
-          </div>
-<!-- buttons end -->
-<p class="block">
-  <button id="reset" class="button is-size-7">PLAY AGAIN! (PLEASE)</button>
-</p>
-</div>
-
-<div class="box mx-5 " id="colourButtons">
-  
-              <div class="notification has-background-white is-flex is-justify-content-space-evenly">
-  
-                  <img src="images/yellow.png" class="image is-64x64 " id="Yellow">
-                  <img src="images/green.png" class="image is-64x64  " id="Green">
-                  <img src="images/red.png" class="image is-64x64   " id="Red">
-  
-              </div>
-  
-              <div class="notification has-background-white is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
-                  <img src="images/black.png"class="image is-64x64  "  id="Black">
-                  <img src="images/pink.png" class="image is-64x64 " id="Pink">
-                  <img src="images/blue.png" class="image is-64x64 " id="Blue">
-  
-              </div>
-  
-              <div class="notification has-background-white is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
-                  <img src="images/orange.png" class="image is-64x64   " id="Orange">
-                  <img src="images/white.png" class="image is-64x64   " id="White">
-                  <img src="images/purple.png" class="image is-64x64   " id="Purple">
-  
-              </div>
-  
-  
-</div>
-          </div>
-            
-          
+            <div class="box has-background-info pt-0 mb-1">
+              <div class="is-size-2 has-text-white has-text-weight-bold">Hello!</div>
+              
         
-      </div>
+        <!-- all the drop down options -->
+  <div id="allTheDropDownOptions">
+    
+    <label for="list" class="is-size-3 has-text-white">Choose a sticker: </label>
+    <!-- animal theme dropdown -->
+    <section id="dropdownAnimals" class="block stickerTheme">
+      <select class="block has-text-centered chooseSticker">
+        <option value="bear">Choose</option>
+        <option value="bear">Bear</option>
+        <option value="giraffe">Giraffe</option>
+        <option value="narwhal">Narwhal</option>
+        <option value="mouse">Mouse</option>
+      </select>
+    </section>
+    
+      <!-- Vehicle theme dropdown -->
+      <section id="dropdownVehicles" class="block is-hidden stickerTheme">
+      <select class="block has-text-centered chooseSticker">
+        <option value="tractor">Choose</option>
+        <option value="tractor">Tractor</option>
+        <option value="digger">Digger</option>
+        <option value="airplane">Airplane</option>
+        <option value="train">Train</option>
+        <option value="ambulance">Ambulance</option>
+        <option value="policecar">Police Car</option>
+        <option value="firetruck">Fire Truck</option>
+      </select>
+    </section>
+
+<!-- dinosaur theme dropdown -->
+<section id="dropdownDinosaurs" class="block is-hidden stickerTheme">
+  <select class="block has-text-centered chooseSticker">
+    <option value="velociraptor">Choose</option>
+    <option value="velociraptor">Velociraptor</option>
+    <option value="t-rex">T-rex</option>
+    <option value="stegosaurus">Stegosaurus</option>
+    <option value="triceratops">Triceratops</option>
+    <option value="pterodactyl">Pterodactyl</option>
+    <option value="brontosaurus">Brontosaurus</option>
+    <option value="egg">Egg</option>
+  </select>
+</section>
+
+
+  </div>
+
+
+            </div>
+            <!-- instructions to play -->
+            <h2 id="instruction" class="block has-text-white mb-1 is-size-4">
+              Click the
+              <span id="colour" class="is-uppercase is-size-3">?</span> Circle!
+            </h2>
+        
+            <!-- correct/wrong images -->
+            <figure id="correct" class="block has-text-centered mb-1 is-size-4 has-text-white">
+              <h2>WELL DONE!</h2>
+              <img id="animalImage" src="images/bear.png" width="20%" />
+              <img src="images/thumbsup.png" width="20%" />
+            </figure>
+
+
+
+
+            <div id="wrong" class="block has-text-centered">
+              <img
+                src="https://media.istockphoto.com/vectors/try-again-vector-hand-drawn-illustration-with-cartoon-lettering-good-vector-id1182313635?k=20&m=1182313635&s=612x612&w=0&h=toLZUQHqj58aetcXbUGqgbY9Eu6dJ63kUwNiFym03dQ="
+                width="20%"
+              /><img src="images/thumbsdown.png" width="20%" />
+            </div>
+        <!-- buttons end -->
+        <p class="block" id="reset">
+          <button id="reset" class="button is-size-7">PLAY AGAIN! (PLEASE)</button>
+          <!-- choose a new theme button -->
+      <a href="#themes" style="text-decoration:none"><button class="button is-size-7 is-primary is-grey" id="newTheme">choose a new sticker theme</button></a>
+
+        </p>
         </div>
-
-<!-- buttons start here -->
+        
+        <!-- buttons start here -->
+        <div class="box mx-5 " id="colourButtons">
+                <div class="notification has-background-white is-flex is-justify-content-space-evenly">
+                    <img src="images/yellow.png" class="image is-64x64 " id="Yellow">
+                    <img src="images/green.png" class="image is-64x64  " id="Green">
+                    <img src="images/red.png" class="image is-64x64   " id="Red">
+                </div>
+                <div class="notification has-background-white is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
+                    <img src="images/black.png"class="image is-64x64  "  id="Black">
+                    <img src="images/pink.png" class="image is-64x64 " id="Pink">
+                    <img src="images/blue.png" class="image is-64x64 " id="Blue">
+                </div>
+                <div class="notification has-background-white is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
+                    <img src="images/orange.png" class="image is-64x64   " id="Orange">
+                    <img src="images/white.png" class="image is-64x64   " id="White">
+                    <img src="images/purple.png" class="image is-64x64   " id="Purple">
+                </div>
           
+          
+        </div>
+      </div>
+         
+
+
            
-    
-    <script src="app.js"></script>
-  </body>
-  </html>
+<%- include ("partials/footer") -%>

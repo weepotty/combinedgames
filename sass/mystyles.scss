@@ -4,27 +4,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
 
 // Set your brand colors
-$dark-orange: #E27D60; //primary
+$dark-orange: #f58a6c; //primary
 $light-blue: #89dceb; // light
 $light-orange: #e8a87c; // info
 $dusky-pink: #c38d9e; // danger
-$mint-green: #6cc493; // success
-$darker-green: #41b3a3; // link
-$amber: rgb(255, 208, 0); // warning
+$mint-green: #96d5b2; // success
+$darker-green: #387d74; // link
+$amber: rgb(250, 196, 102); // warning
 $white: white;
-$light-beige: rgb(233, 228, 220); //success
+$light-beige: rgb(233, 228, 220); //link
 // Update Bulma's global variables
 $family-sans-serif: 'Mali', cursive;
 $primary: $dark-orange;
 $link: $light-beige;
-$success: $darker-green;
 $info: $light-orange;
-$danger: $dusky-pink;
+$success: $mint-green;
 $warning: $amber;
-$white: $white;
+$danger: $dusky-pink;
+$dark: $darker-green;
 $light: $light-blue;
+$white: $white;
 
-//link, info, success, warning, danger, primary, dark, light, black, white
+// primary, link, info, success, warning, danger, dark, light, black, white
+
 //black bis, black ter, grey darker, grey light, grey lighter, white ter, white bis
 
 $widescreen-enabled: false;

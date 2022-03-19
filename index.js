@@ -9,18 +9,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 
+
+const games = ["feelings", "colours", "numbers", "alphabet"]
+const stickerTypes = ["animals", "dinosaurs", "tractors"]
+
+
 app.get("/", (req, res) => {
- 
-  
-  res.render("home");
+  res.render("home", {games, stickerTypes});
 });
 
 app.get("/feelings", (req, res) => {
-  res.render("feelings");
+  res.render("feelings", {games, stickerTypes});
 });
 
 app.get("/colours", (req, res) => {
-  res.render("colours");
+  let str = req.url
+  const current = str.slice(1)
+  const currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+
+
+
+  res.render("colours", {currentPage, games, stickerTypes});
 });
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
