@@ -42,13 +42,21 @@ reset.style.display = "none";
 
 
 
+
+function getStickerChoice () {
+  let stickerChoice = document.querySelector('select.active').value
+  console.log(stickerChoice)
+  document.getElementById("animalImage").src = `images/${stickerChoice}.png`;
+}
+
+
 //code for what to display when colour button is clicked
 function myGame() {
   colourButtons.onclick = buton; 
 }
 
 function buton(e) {
-  
+  getStickerChoice()
   if (e.target.tagName == "IMG") {
     if (e.target.id === randomColour) {
       correct.style.display = "block";
@@ -69,16 +77,15 @@ function buton(e) {
 
 
 // Code for dropdown
-function imageChange() {
-  document.getElementById("animalImage").src = `images/${this.value}.png`;
-}
+// function imageChange() {
+//   document.getElementById("animalImage").src = `images/${this.value}.png`;
+// }
 
 const chooseSticker = document.getElementsByClassName("chooseSticker")
 
-for (let c of chooseSticker) {
-  console.log("let's execute this function?")
-  c.onchange=imageChange
-}
+// for (let c of chooseSticker) {
+//   c.onchange=imageChange
+// }
 
 
 //code for hover
@@ -102,7 +109,17 @@ let stickerThemes=document.getElementsByClassName("stickerTheme")
       s.classList.add("is-hidden")
     }
   }
+
+  for (let c of chooseSticker) {
+    if (c.classList.contains("active")) {
+      c.classList.remove("active")
+    }
+  }
+
+
 }
+
+
 
 const monsters = [
   "monster1", "monster2", "monster3", "monster4", "monster5", "monster6", "monster7", "monster8", "monster9", "monster10"
@@ -121,13 +138,15 @@ function getId(theme) {
   
   
   switch (true) {
-        case (theme.id === "animals"): ; document.getElementById('dropdownAnimals').classList.remove("is-hidden")
+        case (theme.id === "animals"): ; document.getElementById('dropdownAnimals').classList.remove("is-hidden"); document.getElementById('dropdownAnimalsSelect').classList.add("active")
         break
-        case (theme.id === "vehicles"):; document.getElementById("dropdownVehicles").classList.remove("is-hidden")
+        case (theme.id === "vehicles"):; document.getElementById("dropdownVehicles").classList.remove("is-hidden");
+        document.getElementById('dropdownVehiclesSelect').classList.add("active")
         break;
-        case (theme.id === "dinosaurs"): document.getElementById("dropdownDinosaurs").classList.remove("is-hidden")
+        case (theme.id === "dinosaurs"): document.getElementById("dropdownDinosaurs").classList.remove("is-hidden");
+        document.getElementById("dropdownDinosaursSelect").classList.add("active")
         break;
-        case (theme.id === "enchanted"): document.getElementById("dropdownEnchanted").classList.remove("is-hidden")
+        case (theme.id === "enchanted"): document.getElementById("dropdownEnchanted").classList.remove("is-hidden"); document.getElementById("dropdownEnchantedSelect").classList.add("active")
         break;
         case (theme.id === "monsters"): document.getElementById("dropdownMonsters").classList.remove("is-hidden"); getMonster(); reset.addEventListener("click", function () {
           getMonster();
