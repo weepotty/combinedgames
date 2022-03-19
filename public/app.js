@@ -148,7 +148,7 @@ const newTheme = document.getElementById("newTheme")
 
 
 function movePanel () {
-  window.location.hash = "colourButtons"
+  window.location.hash = "footer"
 }
 
 reset.addEventListener("click", function () {
