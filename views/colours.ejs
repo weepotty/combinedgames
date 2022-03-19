@@ -15,14 +15,13 @@
         <!-- all the drop down options -->
   <div id="allTheDropDownOptions">
     
-    <label for="list" class="is-size-3 has-text-white">Choose a sticker: </label>
+    <label for="list" class="is-size-3 has-text-white" id="chooseASticker">Choose a sticker: </label>
     <!-- animal theme dropdown -->
     <section id="dropdownAnimals" class="block stickerTheme">
       <select class="block has-text-centered chooseSticker">
         <option value="bear">Choose</option>
         <option value="bear">Bear</option>
         <option value="giraffe">Giraffe</option>
-        <option value="narwhal">Narwhal</option>
         <option value="mouse">Mouse</option>
         <option value="monkey">Monkey</option>
         <option value="elephant">Elephant</option>
@@ -78,6 +77,28 @@
   </select>
 </section>
 
+<section id="dropdownUnderTheSea" class="block is-hidden stickerTheme">
+  <select class="block has-text-centered chooseSticker">
+    <option value="seahorse">Choose</option>
+    <option value="seahorse">Seahorse</option>
+    <option value="starfish">Starfish</option>
+    <option value="prawn">Prawn</option>
+    <option value="crab">Crab</option>
+    <option value="turtle">Turtle</option>
+    <option value="jellyfish ">Jellyfish</option>
+    <option value="dolphin">Dolphin</option>
+    <option value="narwhal">Narwhal</option>
+    <option value="shark">Shark</option>
+    <option value="clownfish">Clownfish</option>
+  </select>
+</section>
+
+
+<section id="dropdownMonsters" class="block is-hidden stickerTheme">
+  <select class="block has-text-centered chooseSticker">
+    
+  </select>
+</section>
 
 
   </div>
@@ -94,7 +115,7 @@
             <figure id="correct" class="block has-text-centered mb-1 is-size-4 has-text-white">
               <h2>WELL DONE!</h2>
               <img id="animalImage" src="images/bear.png" width="20%" />
-              <img src="images/thumbsup.png" width="20%" />
+              <!-- <img src="images/thumbsup.png" width="20%" /> -->
             </figure>
 
 
@@ -110,7 +131,7 @@
         <p class="block" id="reset">
           <button id="reset" class="button is-size-7">PLAY AGAIN! (PLEASE)</button>
           <!-- choose a new theme button -->
-      <a href="#themes" style="text-decoration:none"><button class="button is-size-7 is-primary is-grey" id="newTheme">choose a new sticker theme</button></a>
+      <!-- <a href="#themes" style="text-decoration:none"><button class="button is-size-7 is-primary is-grey" id="newTheme">choose a new sticker theme</button></a> -->
 
         </p>
         </div>

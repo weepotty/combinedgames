@@ -101,7 +101,19 @@ let stickerThemes=document.getElementsByClassName("stickerTheme")
     }
   }
 }
-  
+
+const monsters = [
+  "monster1", "monster2", "monster3", "monster4", "monster5", "monster6", "monster7", "monster8", "monster9", "monster10"
+];
+
+function getMonster () {
+  {
+    randomMonster = monsters[Math.floor(Math.random() * monsters.length)];
+    document.getElementById("animalImage").src = `images/${randomMonster}.png`;
+    
+  }
+}
+
 
 function getId(theme) {
   
@@ -115,7 +127,9 @@ function getId(theme) {
         break;
         case (theme.id === "enchanted"): document.getElementById("dropdownEnchanted").classList.remove("is-hidden")
         break;
-        case (theme.id === "monsters"): document.getElementById("dropdownMonsters").classList.remove("is-hidden")
+        case (theme.id === "monsters"): document.getElementById("chooseASticker").innerHTML = "Random Monster Generator"; getMonster () 
+        break;
+        case (theme.id === "underTheSea"): document.getElementById("dropdownUnderTheSea").classList.remove("is-hidden")
     
     // default:
       }
