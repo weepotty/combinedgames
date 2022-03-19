@@ -34,6 +34,7 @@ const colourButtons = document.getElementById("colourButtons");
 const instruction = document.getElementById("instruction");
 const allTheDropDownOptions = document.getElementById("allTheDropDownOptions");
 const gamePanel = document.getElementById("gamePanel")
+
 correct.style.display = "none";
 wrong.style.display = "none";
 reset.style.display = "none";
@@ -43,10 +44,11 @@ reset.style.display = "none";
 
 //code for what to display when colour button is clicked
 function myGame() {
-  colourButtons.onclick = buton;
+  colourButtons.onclick = buton; 
 }
 
 function buton(e) {
+  
   if (e.target.tagName == "IMG") {
     if (e.target.id === randomColour) {
       correct.style.display = "block";
@@ -116,7 +118,7 @@ function getMonster () {
 
 
 function getId(theme) {
-   const chooseASticker = document.getElementById("chooseASticker")
+  
   
   switch (true) {
         case (theme.id === "animals"): ; document.getElementById('dropdownAnimals').classList.remove("is-hidden")
@@ -127,7 +129,7 @@ function getId(theme) {
         break;
         case (theme.id === "enchanted"): document.getElementById("dropdownEnchanted").classList.remove("is-hidden")
         break;
-        case (theme.id === "monsters"): chooseASticker.innerHTML = "Random Monster Generator"; chooseASticker.classList.add("is-size-5"); chooseASticker.classList.remove("is-size-3"); getMonster(); reset.addEventListener("click", function () {
+        case (theme.id === "monsters"): document.getElementById("dropdownMonsters").classList.remove("is-hidden"); getMonster(); reset.addEventListener("click", function () {
           getMonster();
         })
         break;
@@ -143,7 +145,14 @@ const newTheme = document.getElementById("newTheme")
 
 // })
 
+
+
+function movePanel () {
+  window.location.hash = "colourButtons"
+}
+
 reset.addEventListener("click", function () {
+  movePanel ();
   getColour ();
   instruction.style.display="block"
   allTheDropDownOptions.style.display = "block"

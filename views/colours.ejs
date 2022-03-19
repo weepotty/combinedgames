@@ -8,17 +8,19 @@
       <div id="gamePanel">
         <div class="notification mx-5 mt-4 has-background-success has-text-centered">
         
-            <div class="box has-background-info pt-0 mb-1">
+            <div class="box has-background-info pt-0 px-1 mb-1">
               <div class="is-size-2 has-text-white has-text-weight-bold">Hello!</div>
               
         
         <!-- all the drop down options -->
   <div id="allTheDropDownOptions">
     
-    <label for="list" class="is-size-3 has-text-white" id="chooseASticker">Choose a sticker: </label>
+    
     <!-- animal theme dropdown -->
-    <section id="dropdownAnimals" class="block stickerTheme">
-      <select class="block has-text-centered chooseSticker">
+    
+    <section id="dropdownAnimals" class="stickerTheme">
+      <label for="list" class="is-size-4 has-text-white">Choose a sticker: </label>
+      <select class="has-text-centered chooseSticker">
         <option value="bear">Choose</option>
         <option value="bear">Bear</option>
         <option value="giraffe">Giraffe</option>
@@ -35,8 +37,10 @@
     </section>
     
       <!-- Vehicle theme dropdown -->
-      <section id="dropdownVehicles" class="block is-hidden stickerTheme">
-      <select class="block has-text-centered chooseSticker">
+      
+      <section id="dropdownVehicles" class="is-hidden stickerTheme">
+        <label for="list" class="is-size-4 has-text-white">Choose a sticker: </label>
+      <select class=" has-text-centered chooseSticker">
         <option value="tractor">Choose</option>
         <option value="tractor">Tractor</option>
         <option value="digger">Digger</option>
@@ -49,8 +53,10 @@
     </section>
 
 <!-- dinosaur theme dropdown -->
-<section id="dropdownDinosaurs" class="block is-hidden stickerTheme">
-  <select class="block has-text-centered chooseSticker">
+
+<section id="dropdownDinosaurs" class="is-hidden stickerTheme">
+  <label for="list" class="is-size-4 has-text-white">Choose a sticker: </label>
+  <select class=" has-text-centered chooseSticker">
     <option value="velociraptor">Choose</option>
     <option value="velociraptor">Velociraptor</option>
     <option value="t-rex">T-rex</option>
@@ -63,8 +69,10 @@
 </section>
 
 <!-- enchanted theme dropdown -->
-<section id="dropdownEnchanted" class="block is-hidden stickerTheme">
-  <select class="block has-text-centered chooseSticker">
+
+<section id="dropdownEnchanted" class=" is-hidden stickerTheme">
+  <label for="list" class="is-size-4 has-text-white">Choose a sticker: </label>
+  <select class=" has-text-centered chooseSticker">
     <option value="owl">Choose</option>
     <option value="owl">Owl</option>
     <option value="squirrel">Squirrel</option>
@@ -77,8 +85,10 @@
   </select>
 </section>
 
-<section id="dropdownUnderTheSea" class="block is-hidden stickerTheme">
-  <select class="block has-text-centered chooseSticker">
+<!-- under the sea theme dropdown -->
+<section id="dropdownUnderTheSea" class=" is-hidden stickerTheme">
+  <label for="list" class="is-size-4 has-text-white">Choose a sticker: </label>
+  <select class=" has-text-centered chooseSticker">
     <option value="seahorse">Choose</option>
     <option value="seahorse">Seahorse</option>
     <option value="starfish">Starfish</option>
@@ -93,11 +103,11 @@
   </select>
 </section>
 
-
-<section id="dropdownMonsters" class="block is-hidden stickerTheme">
-  <select class="block has-text-centered chooseSticker">
-    
-  </select>
+<!-- monster theme dropdown -->
+<section id="dropdownMonsters" class=" is-hidden stickerTheme">
+  <div class="block has-text-centered is-size-5 chooseSticker">
+    Random Monster Generator
+  </div>
 </section>
 
 
