@@ -156,6 +156,7 @@ let chooseSticker = document.getElementsByClassName("chooseSticker")
 
 
 function getId(theme) {
+instruction.classList.remove("is-hidden");
 currentGame = window.location.pathname.replace(/^\/([^\/]*).*$/, '$1');
 console.log(currentGame)
 myTheme()
@@ -208,7 +209,7 @@ const newTheme = document.getElementById("newTheme")
 
 
 newTheme.addEventListener("click", function () {
-  instruction.style.display = "none"
+  instruction.classList.add("is-hidden");
   console.log("new theme selected and the instructions should disappear")
   
 myTheme()
