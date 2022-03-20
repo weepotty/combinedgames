@@ -25,6 +25,48 @@ const numbers = [
 ];
 
 
+const feelings = [
+  "Angry",
+  "Cold",
+  "Confused",
+  "Happy",
+  "Ouchie",
+  "Sad",
+  "Scared",
+  "Surprised",
+  "Tired",
+]
+
+
+const alphabet = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z"
+]
+
 
 //code for change in opacity on hovering
 function reduceOpacity(x) {
@@ -58,6 +100,20 @@ function getNumber () {
   console.log("random number generated")
 }
 
+//random feelings generator
+function getFeeling () {
+  randomFeeling = feelings[Math.floor(Math.random() * feelings.length)];
+  document.getElementById("colour").textContent = randomFeeling;
+  feelingsGame()
+  console.log("random feeling generated")
+}
+
+function getLetter () {
+  randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+  document.getElementById("colour").textContent = randomLetter;
+  alphabetGame()
+  console.log("random letter generated")
+}
 const correct = document.getElementById("correct");
 const wrong = document.getElementById("wrong");
 const reset = document.getElementById("reset");
@@ -75,21 +131,23 @@ reset.style.display = "none";
 //choosing the sticker theme
 
 
-const chooseSticker = document.getElementsByClassName("chooseSticker")
 
 
 function myTheme () {
 let stickerThemes=document.getElementsByClassName("stickerTheme")
+let chooseSticker = document.getElementsByClassName("chooseSticker")
 
   for (let s of stickerThemes) {
     if (!s.classList.contains("is-hidden")) {
       s.classList.add("is-hidden")
+      console.log("hidden class added")
     }
   }
 
   for (let c of chooseSticker) {
     if (c.classList.contains("active")) {
       c.classList.remove("active")
+      console.log ("ACTIVE class removed")
     }
   }
 
@@ -100,6 +158,7 @@ let stickerThemes=document.getElementsByClassName("stickerTheme")
 function getId(theme) {
 currentGame = window.location.pathname.replace(/^\/([^\/]*).*$/, '$1');
 console.log(currentGame)
+myTheme()
   if (currentGame.includes("colours")) {
     console.log("url contains colours")
     getColour()
@@ -108,6 +167,14 @@ console.log(currentGame)
     console.log("url contains numbers")
     getNumber()
     numbersGame()
+  } else if (currentGame.includes("feelings")) {
+    console.log("url contains feelings")
+    getFeeling()
+    feelingsGame()
+  } else if (currentGame.includes("alphabet")) {
+    console.log("url contains alphabet")
+    getLetter()
+    alphabetGame()
   } else {
     console.log('broken')
   }
@@ -139,10 +206,14 @@ console.log(currentGame)
 const dropdownMonsters = document.getElementById("dropdownMonsters")
 const newTheme = document.getElementById("newTheme")
 
-// newTheme.addEventListener("click", function () {
-// location.reload()
 
-// })
+newTheme.addEventListener("click", function () {
+  instruction.style.display = "none"
+  console.log("new theme selected and the instructions should disappear")
+  
+myTheme()
+
+})
 
 
 // choosing sticker from dropdown
@@ -184,6 +255,16 @@ function numbersGame() {
  
 }
 
+function feelingsGame () {
+  console.log("feelings game is running")
+  feelingButtons.onclick=buton;
+}
+
+function alphabetGame () {
+  console.log('alphabet game is running')
+  letterButtons.onclick=buton;
+}
+
 function buton(e) {
   if (dropdownMonsters.classList.contains("active")) {
 getMonster()
@@ -201,7 +282,11 @@ getMonster()
         colourButtons.style.display = "none";
       } else if (currentGame.includes("numbers")) { 
      numberButtons.style.display = "none";
-    }
+    } else if (currentGame.includes("feelings")) { 
+      feelingButtons.style.display = "none";
+     } else if (currentGame.includes("alphabet")) {
+       letterButtons.style.display= "none";
+     }
 
       instruction.style.display ="none"
       allTheDropDownOptions.style.display = "none";
@@ -226,9 +311,16 @@ reset.addEventListener("click", function () {
     console.log("url contains numbers")
     getNumber()
     numberButtons.style.display = "block";
-
  
-  } else {
+  } else if (currentGame.includes("feelings")) {
+    console.log("url contains feelings")
+    getFeeling()
+    feelingButtons.style.display = "block";
+  } else if (currentGame.includes("alphabet")) {
+    getLetter()
+    letterButtons.style.display="block";
+  } 
+  else {
     console.log('broken')
   }
   

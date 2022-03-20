@@ -21,13 +21,17 @@ app.get("/", (req, res) => {
 });
 
 app.get("/feelings", (req, res) => {
-  res.render("feelings", {games, stickerTypes});
+  str = req.url
+current = str.slice(1)
+currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+  res.render("feelings", {games, currentPage, stickerTypes});
 });
 
 app.get("/numbers", (req, res) => {
-str = req.url
+  str = req.url
 current = str.slice(1)
 currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+
 
   res.render("numbers", {games, stickerTypes, currentPage});
 });
@@ -36,7 +40,18 @@ app.get("/colours", (req, res) => {
   str = req.url
   current = str.slice(1)
   currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+  
   res.render("colours", {currentPage, games, stickerTypes});
 });
+
+app.get("/alphabet", (req, res) => {
+  str = req.url
+  current = str.slice(1)
+  currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+  
+  res.render("alphabet", {currentPage, games, stickerTypes});
+});
+
+
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
