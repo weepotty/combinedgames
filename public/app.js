@@ -12,20 +12,41 @@ const colours = [
   "White",
 ];
 
+const numbers = [
+  "One",
+  "Two",
+  "Three",
+  "Four",
+  "Five",
+  "Six",
+  "Seven",
+  "Eight",
+  "Nine",
+];
+
 
 
 //what functions to run when the window loads
 
 
-window.onload = myGame;
-window.onload = getColour;
+// window.onload = myGame;
+// window.onload = getColour;
 
+// random colour generator
 function getColour () {
   randomColour = colours[Math.floor(Math.random() * colours.length)];
   document.getElementById("colour").textContent = randomColour;
-  myGame()
+  coloursGame()
 }
 
+// random number generator
+function getNumber () {
+  randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+  document.getElementById("colour").textContent = randomNumber;
+
+  numbersGame()
+  console.log("random number generated")
+}
 
 const correct = document.getElementById("correct");
 const wrong = document.getElementById("wrong");
@@ -111,7 +132,21 @@ function getMonster () {
 }
 
 
+
 function getId(theme) {
+  let currentGame = window.location.pathname.replace(/^\/([^\/]*).*$/, '$1');
+console.log(currentGame)
+  if (currentGame.includes("colours")) {
+    console.log("url contains colours")
+    getColour()
+    coloursGame()
+  } else if (currentGame.includes("numbers")) {
+    console.log("url contains numbers")
+    getNumber()
+    numbersGame()
+  } else {
+    console.log('broken')
+  }
   
   
   switch (true) {
@@ -135,7 +170,8 @@ function getId(theme) {
     
     default:console.log("error in switch")
       }
-}
+
+    }   
 const dropdownMonsters = document.getElementById("dropdownMonsters")
 const newTheme = document.getElementById("newTheme")
 
@@ -152,8 +188,13 @@ function movePanel () {
 
 
 //code for what to display when colour button is clicked
-function myGame() {
+function coloursGame() {
   colourButtons.onclick = buton; 
+ 
+}
+
+function numbersGame() {
+  numberButtons.onclick = buton; 
  
 }
 

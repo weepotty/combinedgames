@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 5000;
 
 const bodyParser = require("body-parser");
 
+
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,13 +24,18 @@ app.get("/feelings", (req, res) => {
   res.render("feelings", {games, stickerTypes});
 });
 
+app.get("/numbers", (req, res) => {
+str = req.url
+current = str.slice(1)
+currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+
+  res.render("numbers", {games, stickerTypes, currentPage});
+});
+
 app.get("/colours", (req, res) => {
-  let str = req.url
-  const current = str.slice(1)
-  const currentPage = current.charAt(0).toUpperCase() + current.slice(1)
-
-
-
+  str = req.url
+  current = str.slice(1)
+  currentPage = current.charAt(0).toUpperCase() + current.slice(1)
   res.render("colours", {currentPage, games, stickerTypes});
 });
 

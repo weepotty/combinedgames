@@ -1,0 +1,155 @@
+ 
+      <div id="gamePanel" class="mb-0 pb-5">
+        <div class="notification mx-5 mt-4 has-background-success has-text-centered">
+        
+            <div class="box has-background-info pt-0 px-1 mb-1">
+              <div class="is-size-2 has-text-white has-text-weight-bold">Hello!</div>
+              
+        
+        <!-- all the drop down options -->
+  <div id="allTheDropDownOptions">
+    
+    
+    <!-- animal theme dropdown -->
+    
+    <section id="dropdownAnimals" class="stickerTheme pt-0">
+      <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
+      <select class="has-text-centered chooseSticker" id="dropdownAnimalsSelect">
+        <!-- <option value="bear">Choose</option> -->
+        <option value="bear">Bear</option>
+        <option value="giraffe">Giraffe</option>
+        <option value="mouse">Mouse</option>
+        <option value="monkey">Monkey</option>
+        <option value="elephant">Elephant</option>
+        <option value="worm">Worm</option>
+        <option value="cow">Cow</option>
+        <option value="pig">Pig</option>
+        <option value="tiger">Tiger</option>
+
+
+      </select>
+    </section>
+    
+      <!-- Vehicle theme dropdown -->
+      
+      <section id="dropdownVehicles" class="is-hidden stickerTheme">
+        <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
+      <select id="dropdownVehiclesSelect" class=" has-text-centered chooseSticker">
+        <!-- <option value="tractor">Choose</option> -->
+        <option value="tractor">Tractor</option>
+        <option value="digger">Digger</option>
+        <option value="airplane">Airplane</option>
+        <option value="train">Train</option>
+        <option value="ambulance">Ambulance</option>
+        <option value="bicycle">Bicycle</option>
+        <option value="bulldozer">Bulldozer</option>
+        <option value="bus">Bus</option>
+        <option value="combineharvester">Combine Harvester</option>
+        <option value="cranetruck">Crane Truck</option>
+        <option value="motorbike">Motorbike</option>
+        <option value="rickshaw">Rickshaw</option>
+        <option value="ship">Ship</option>
+        <option value="tank">Tank</option>
+        <option value="tram">Tram</option>
+
+        
+      </select>
+    </section>
+
+<!-- dinosaur theme dropdown -->
+
+<section id="dropdownDinosaurs" class="is-hidden stickerTheme">
+  <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
+  <select id="dropdownDinosaursSelect" class=" has-text-centered chooseSticker">
+    <!-- <option value="velociraptor">Choose</option> -->
+    <option value="velociraptor">Velociraptor</option>
+    <option value="t-rex">T-rex</option>
+    <option value="stegosaurus">Stegosaurus</option>
+    <option value="triceratops">Triceratops</option>
+    <option value="pterodactyl">Pterodactyl</option>
+    <option value="brontosaurus">Brontosaurus</option>
+    <option value="egg">Egg</option>
+  </select>
+</section>
+
+<!-- enchanted theme dropdown -->
+
+<section id="dropdownEnchanted" class=" is-hidden stickerTheme">
+  <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
+  <select id="dropdownEnchantedSelect" class=" has-text-centered chooseSticker">
+    <!-- <option value="owl">Choose</option> -->
+    <option value="owl">Owl</option>
+    <option value="squirrel">Squirrel</option>
+    <option value="toadstool">Toadstool</option>
+    <option value="tree">Tree</option>
+    <option value="elf">Elf</option>
+    <option value="fairy">Fairy</option>
+    <option value="gnome">Gnome</option>
+    <option value="unicorn">Unicorn</option>
+  </select>
+</section>
+
+<!-- under the sea theme dropdown -->
+<section id="dropdownUnderTheSea" class=" is-hidden stickerTheme">
+  <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
+  <select id="dropdownUnderTheSeaSelect" class=" has-text-centered chooseSticker">
+    <!-- <option value="seahorse">Choose</option> -->
+    <option value="seahorse">Seahorse</option>
+    <option value="starfish">Starfish</option>
+    <option value="prawn">Prawn</option>
+    <option value="crab">Crab</option>
+    <option value="turtle">Turtle</option>
+    <option value="jellyfish">Jellyfish</option>
+    <option value="dolphin">Dolphin</option>
+    <option value="narwhal">Narwhal</option>
+    <option value="shark">Shark</option>
+    <option value="seaweed">Seaweed</option>
+    <option value="oyster">Oyster</option>
+    <option value="mermaid">Mermaid</option>
+    <option value="submarine">Submarine</option>
+    
+  </select>
+</section>
+
+<!-- monster theme dropdown -->
+<section id="dropdownMonsters" class="is-hidden stickerTheme">
+  <div class="block has-text-centered is-size-5 chooseSticker">
+    Random Monster Generator
+  </div>
+</section>
+
+
+  </div>
+
+
+            </div>
+            <!-- instructions to play -->
+            <h2 id="instruction" class="block has-text-white mb-1 is-size-4">
+              Click the
+              <span id="colour" class="is-uppercase is-size-3">?</span> Button!
+            </h2>
+        
+            <!-- correct/wrong images -->
+            <figure id="correct" class="block has-text-centered mb-1 is-size-4 has-text-white">
+              <h2>WELL DONE!</h2>
+              <img id="animalImage" src="images/bear.png" width="20%" />
+              <!-- <img src="images/thumbsup.png" width="20%" /> -->
+            </figure>
+
+
+
+
+            <div id="wrong" class="block has-text-centered">
+              <img
+                src="https://media.istockphoto.com/vectors/try-again-vector-hand-drawn-illustration-with-cartoon-lettering-good-vector-id1182313635?k=20&m=1182313635&s=612x612&w=0&h=toLZUQHqj58aetcXbUGqgbY9Eu6dJ63kUwNiFym03dQ="
+                width="20%"
+              /><img src="images/thumbsdown.png" width="20%" />
+            </div>
+        <!-- buttons end -->
+        <p class="block" id="reset">
+          <button id="reset" class="button is-size-7">PLAY AGAIN! (PLEASE)</button>
+          <!-- choose a new theme button -->
+      <a href="#themes" style="text-decoration:none"><button class="button is-size-7 is-primary is-grey" id="newTheme">choose a new sticker theme</button></a>
+
+        </p>
+        </div>
