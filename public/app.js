@@ -26,6 +26,17 @@ const numbers = [
 
 
 
+//code for change in opacity on hovering
+function reduceOpacity(x) {
+  x.style.opacity = 0.8;
+  
+}
+
+function normalOpacity(x) {
+  x.style.opacity = 1.0;
+  
+}
+
 //what functions to run when the window loads
 
 
@@ -43,7 +54,6 @@ function getColour () {
 function getNumber () {
   randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
   document.getElementById("colour").textContent = randomNumber;
-
   numbersGame()
   console.log("random number generated")
 }
@@ -62,41 +72,10 @@ reset.style.display = "none";
 // gamePanel.style.visibility = "hidden";
 
 
+//choosing the sticker theme
 
-
-function getStickerChoice () {
-  let stickerChoice = document.querySelector('select.active').value
-  document.getElementById("animalImage").src = `images/${stickerChoice}.png`;
-}
-
-
-
-
-
-
-// Code for dropdown
-// function imageChange() {
-//   document.getElementById("animalImage").src = `images/${this.value}.png`;
-// }
 
 const chooseSticker = document.getElementsByClassName("chooseSticker")
-
-// for (let c of chooseSticker) {
-//   c.onchange=imageChange
-// }
-
-
-//code for hover
-function reduceOpacity(x) {
-  x.style.opacity = 0.8;
-  
-}
-
-function normalOpacity(x) {
-  x.style.opacity = 1.0;
-  
-}
-
 
 
 function myTheme () {
@@ -118,23 +97,8 @@ let stickerThemes=document.getElementsByClassName("stickerTheme")
 }
 
 
-
-const monsters = [
-  "monster1", "monster2", "monster3", "monster4", "monster5", "monster6", "monster7", "monster8", "monster9", "monster10"
-];
-
-function getMonster () {
-  {
-    randomMonster = monsters[Math.floor(Math.random() * monsters.length)];
-    document.getElementById("animalImage").src = `images/${randomMonster}.png`;
-    
-  }
-}
-
-
-
 function getId(theme) {
-  let currentGame = window.location.pathname.replace(/^\/([^\/]*).*$/, '$1');
+currentGame = window.location.pathname.replace(/^\/([^\/]*).*$/, '$1');
 console.log(currentGame)
   if (currentGame.includes("colours")) {
     console.log("url contains colours")
@@ -181,19 +145,41 @@ const newTheme = document.getElementById("newTheme")
 // })
 
 
+// choosing sticker from dropdown
+
+function getStickerChoice () {
+  let stickerChoice = document.querySelector('select.active').value
+  document.getElementById("animalImage").src = `images/${stickerChoice}.png`;
+}
+
+
+//random monster generator
+const monsters = [
+  "monster1", "monster2", "monster3", "monster4", "monster5", "monster6", "monster7", "monster8", "monster9", "monster10"
+];
+
+function getMonster () {
+  {
+    randomMonster = monsters[Math.floor(Math.random() * monsters.length)];
+    document.getElementById("animalImage").src = `images/${randomMonster}.png`;
+    
+  }
+}
+
 
 function movePanel () {
   window.location.hash = "footer"
 }
 
 
-//code for what to display when colour button is clicked
+//code for what to display when icon is clicked
 function coloursGame() {
   colourButtons.onclick = buton; 
  
 }
 
 function numbersGame() {
+  console.log("numbers game is running")
   numberButtons.onclick = buton; 
  
 }
@@ -206,11 +192,17 @@ getMonster()
   
   console.log("click detected")
   if (e.target.tagName == "IMG") {
-    if (e.target.id === randomColour) {
+    console.log(document.getElementById("colour").textContent)
+    if (e.target.id === document.getElementById("colour").textContent) {
       correct.style.display = "block";
       wrong.style.display = "none";
       reset.style.display = "block";
-      colourButtons.style.display = "none";
+      if (currentGame.includes("colours")) {
+        colourButtons.style.display = "none";
+      } else if (currentGame.includes("numbers")) { 
+     numberButtons.style.display = "none";
+    }
+
       instruction.style.display ="none"
       allTheDropDownOptions.style.display = "none";
     } else {
@@ -224,11 +216,25 @@ getMonster()
 
 reset.addEventListener("click", function () {
   movePanel ();
-  getColour ();
+  if (currentGame.includes("colours")) {
+    console.log("url contains colours")
+    getColour()
+    colourButtons.style.display = "block";
+
+   
+  } else if (currentGame.includes("numbers")) {
+    console.log("url contains numbers")
+    getNumber()
+    numberButtons.style.display = "block";
+
+ 
+  } else {
+    console.log('broken')
+  }
+  
   instruction.style.display="block"
   allTheDropDownOptions.style.display = "block"
   correct.style.display = "none";
-  colourButtons.style.display = "block";
   reset.style.display = "none";
 
 });
