@@ -280,6 +280,7 @@ getMonster()
       correct.style.display = "block";
       wrong.style.display = "none";
       reset.style.display = "block";
+      newTheme.style.display="block";
       if (currentGame.includes("colours")) {
         colourButtons.style.display = "none";
       } else if (currentGame.includes("numbers")) { 
