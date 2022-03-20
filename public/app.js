@@ -295,7 +295,9 @@ getMonster()
     } else {
       wrong.style.display = "block";
       correct.style.display = "none";
-      reset.style.display = "block";
+      reset.style.display = "none";
+      newTheme.style.display="none";
+
     }
   }
 }
