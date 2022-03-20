@@ -14,7 +14,7 @@
     
     <section id="dropdownAnimals" class="stickerTheme pt-0">
       <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
-      <select class="has-text-centered chooseSticker" id="dropdownAnimalsSelect">
+      <select class="has-text-centered chooseSticker" id="dropdownAnimalsSelect" onchange="movePanel()">
         <!-- <option value="bear">Choose</option> -->
         <option value="bear">Bear</option>
         <option value="giraffe">Giraffe</option>
@@ -34,7 +34,7 @@
       
       <section id="dropdownVehicles" class="is-hidden stickerTheme">
         <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
-      <select id="dropdownVehiclesSelect" class=" has-text-centered chooseSticker">
+      <select id="dropdownVehiclesSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
         <!-- <option value="tractor">Choose</option> -->
         <option value="tractor">Tractor</option>
         <option value="digger">Digger</option>
@@ -60,7 +60,7 @@
 
 <section id="dropdownDinosaurs" class="is-hidden stickerTheme">
   <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
-  <select id="dropdownDinosaursSelect" class=" has-text-centered chooseSticker">
+  <select id="dropdownDinosaursSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
     <!-- <option value="velociraptor">Choose</option> -->
     <option value="velociraptor">Velociraptor</option>
     <option value="t-rex">T-rex</option>
@@ -76,7 +76,7 @@
 
 <section id="dropdownEnchanted" class=" is-hidden stickerTheme">
   <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
-  <select id="dropdownEnchantedSelect" class=" has-text-centered chooseSticker">
+  <select id="dropdownEnchantedSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
     <!-- <option value="owl">Choose</option> -->
     <option value="owl">Owl</option>
     <option value="squirrel">Squirrel</option>
@@ -92,7 +92,7 @@
 <!-- under the sea theme dropdown -->
 <section id="dropdownUnderTheSea" class=" is-hidden stickerTheme">
   <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
-  <select id="dropdownUnderTheSeaSelect" class=" has-text-centered chooseSticker">
+  <select id="dropdownUnderTheSeaSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
     <!-- <option value="seahorse">Choose</option> -->
     <option value="seahorse">Seahorse</option>
     <option value="starfish">Starfish</option>

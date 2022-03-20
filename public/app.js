@@ -160,6 +160,7 @@ instruction.classList.remove("is-hidden");
 currentGame = window.location.pathname.replace(/^\/([^\/]*).*$/, '$1');
 console.log(currentGame)
 myTheme()
+
   if (currentGame.includes("colours")) {
     console.log("url contains colours")
     getColour()
