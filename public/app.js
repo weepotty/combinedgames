@@ -97,7 +97,6 @@ function getNumber () {
   randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
   document.getElementById("colour").textContent = randomNumber;
   numbersGame()
-  console.log("random number generated")
 }
 
 //random feelings generator
@@ -105,14 +104,12 @@ function getFeeling () {
   randomFeeling = feelings[Math.floor(Math.random() * feelings.length)];
   document.getElementById("colour").textContent = randomFeeling;
   feelingsGame()
-  console.log("random feeling generated")
 }
 
 function getLetter () {
   randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
   document.getElementById("colour").textContent = randomLetter;
   alphabetGame()
-  console.log("random letter generated")
 }
 const correct = document.getElementById("correct");
 const wrong = document.getElementById("wrong");
@@ -140,14 +137,13 @@ let chooseSticker = document.getElementsByClassName("chooseSticker")
   for (let s of stickerThemes) {
     if (!s.classList.contains("is-hidden")) {
       s.classList.add("is-hidden")
-      console.log("hidden class added")
     }
   }
 
   for (let c of chooseSticker) {
     if (c.classList.contains("active")) {
       c.classList.remove("active")
-      console.log ("ACTIVE class removed")
+      
     }
   }
 
@@ -158,23 +154,19 @@ let chooseSticker = document.getElementsByClassName("chooseSticker")
 function getId(theme) {
 instruction.classList.remove("is-hidden");
 currentGame = window.location.pathname.replace(/^\/([^\/]*).*$/, '$1');
-console.log(currentGame)
+
 myTheme()
 
   if (currentGame.includes("colours")) {
-    console.log("url contains colours")
     getColour()
     coloursGame()
   } else if (currentGame.includes("numbers")) {
-    console.log("url contains numbers")
     getNumber()
     numbersGame()
   } else if (currentGame.includes("feelings")) {
-    console.log("url contains feelings")
     getFeeling()
     feelingsGame()
   } else if (currentGame.includes("alphabet")) {
-    console.log("url contains alphabet")
     getLetter()
     alphabetGame()
   } else {
@@ -211,7 +203,6 @@ const newTheme = document.getElementById("newTheme")
 
 newTheme.addEventListener("click", function () {
   instruction.classList.add("is-hidden");
-  console.log("new theme selected and the instructions should disappear")
   
 myTheme()
 
@@ -252,18 +243,15 @@ function coloursGame() {
 }
 
 function numbersGame() {
-  console.log("numbers game is running")
   numberButtons.onclick = buton; 
  
 }
 
 function feelingsGame () {
-  console.log("feelings game is running")
   feelingButtons.onclick=buton;
 }
 
 function alphabetGame () {
-  console.log('alphabet game is running')
   letterButtons.onclick=buton;
 }
 
@@ -275,7 +263,6 @@ getMonster()
   
   console.log("click detected")
   if (e.target.tagName == "IMG") {
-    console.log(document.getElementById("colour").textContent)
     if (e.target.id === document.getElementById("colour").textContent) {
       correct.style.display = "block";
       wrong.style.display = "none";
@@ -307,18 +294,15 @@ getMonster()
 reset.addEventListener("click", function () {
   movePanel ();
   if (currentGame.includes("colours")) {
-    console.log("url contains colours")
     getColour()
     colourButtons.style.display = "block";
 
    
   } else if (currentGame.includes("numbers")) {
-    console.log("url contains numbers")
     getNumber()
     numberButtons.style.display = "block";
  
   } else if (currentGame.includes("feelings")) {
-    console.log("url contains feelings")
     getFeeling()
     feelingButtons.style.display = "block";
   } else if (currentGame.includes("alphabet")) {

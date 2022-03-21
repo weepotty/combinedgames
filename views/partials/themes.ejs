@@ -5,29 +5,37 @@
     <div class="py-4 is-size-3 has-background-grey-light has-text-white">
       Welcome to The <%= currentPage %> Game!
       </div> 
-    
-  <div id="themes">
+  
+      
+      <div id="themes">
     <div class="py-0 is-size-3 has-background-white has-text-black py-1">Choose a sticker theme:</div>
-    <a href="#gamePanel">
-       <div class="has-background-danger py-1" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="animals">animals</div>
-      </a>
-    <a href="#gamePanel">  
-      <div class="has-background-success py-1" id="vehicles" onmouseover="reduceOpacity(this)" onclick="myTheme(), getId(this)" onmouseout="normalOpacity(this)">vehicles</div>
-    </a>
-    <a href="#gamePanel">
-      <div class="has-background-info py-1" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="dinosaurs">dinosaurs</div>
-    </a>
-    <a href="#gamePanel">
-       <div class=" has-background-light py-1" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="enchanted">enchanted</div>
-      </a>
 
-    <a href="#gamePanel"> 
-      <div class=" has-background-warning py-1" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="underTheSea">under the sea</div>
-     </a>
- 
-    <a href="#gamePanel"> 
-     <div class=" has-background-danger py-1" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="monsters">monsters</div>
+
+
+    <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+    <a href="#gamePanel">
+       <div class="is-flex has-background-danger mx-5 my-3" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="animals">animals</div>
+      </a>
+    <a href="#gamePanel">
+      <div class="is-flex has-background-success mx-5  my-3" id="vehicles" onmouseover="reduceOpacity(this)" onclick="myTheme(), getId(this)" onmouseout="normalOpacity(this)">vehicles</div>
+    </a>
+    <a href="#gamePanel">
+      <div class="is-flex has-background-info mx-5 my-3" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="dinosaurs">dinosaurs</div>
     </a>
 
   
+  
+  
+    <a href="#gamePanel">
+       <div class="is-flex  has-background-light mx-5 my-3" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="enchanted">enchanted</div>
+      </a>
+    <a href="#gamePanel">
+      <div class=" is-flex has-background-warning mx-5 my-3" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="underTheSea">under the sea</div>
+     </a>
+    <a href="#gamePanel">
+     <div class="is-flex  has-background-danger mx-5 py-1" onmouseover="reduceOpacity(this)" onmouseout="normalOpacity(this)" onclick = "myTheme(), getId(this)" id="monsters">monsters</div>
+    </a>
+    
+      
+      </div>
   </div>
