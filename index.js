@@ -13,18 +13,18 @@ app.use(express.static("public"));
 
 
 const games = ["feelings", "colours", "numbers", "alphabet"]
-const stickerTypes = ["animals", "dinosaurs", "tractors"]
+
 
 
 app.get("/", (req, res) => {
-  res.render("home", {games, stickerTypes});
+  res.render("home", {games, });
 });
 
 app.get("/feelings", (req, res) => {
   str = req.url
 current = str.slice(1)
 currentPage = current.charAt(0).toUpperCase() + current.slice(1)
-  res.render("feelings", {games, currentPage, stickerTypes});
+  res.render("feelings", {games, currentPage, });
 });
 
 app.get("/numbers", (req, res) => {
@@ -33,7 +33,7 @@ current = str.slice(1)
 currentPage = current.charAt(0).toUpperCase() + current.slice(1)
 
 
-  res.render("numbers", {games, stickerTypes, currentPage});
+  res.render("numbers", {games, currentPage});
 });
 
 app.get("/colours", (req, res) => {
@@ -41,7 +41,7 @@ app.get("/colours", (req, res) => {
   current = str.slice(1)
   currentPage = current.charAt(0).toUpperCase() + current.slice(1)
   
-  res.render("colours", {currentPage, games, stickerTypes});
+  res.render("colours", {currentPage, games });
 });
 
 app.get("/alphabet", (req, res) => {
@@ -49,8 +49,25 @@ app.get("/alphabet", (req, res) => {
   current = str.slice(1)
   currentPage = current.charAt(0).toUpperCase() + current.slice(1)
   
-  res.render("alphabet", {currentPage, games, stickerTypes});
+  res.render("alphabet", {currentPage, games});
 });
+
+app.get("/fruits", (req, res) => {
+  str = req.url
+  current = str.slice(1)
+  currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+  
+  res.render("fruits", {currentPage, games});
+});
+
+app.get("/vegetables", (req, res) => {
+  str = req.url
+  current = str.slice(1)
+  currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+  
+  res.render("vegetables", {currentPage, games});
+});
+
 
 
 

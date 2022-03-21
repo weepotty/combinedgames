@@ -67,7 +67,33 @@ const alphabet = [
   "z"
 ]
 
+const fruits = [
+  "apple",
+  "banana",
+  "blueberries",
+  "mango",
+  "durian",
+  "lemon",
+  "mangosteen",
+  "grapes",
+  "orange",
+  "pear",
+  "pineapple",
+  "strawberry",
+  "watermelon"
+]
 
+const vegetables = [
+  "aubergine",
+  "broccoli",
+  "carrots",
+  "cucumber",
+  "lettuce",
+  "onion",
+  "peas",
+  "potato",
+  "radish",
+]
 //code for change in opacity on hovering
 function reduceOpacity(x) {
   x.style.opacity = 0.8;
@@ -86,9 +112,11 @@ function normalOpacity(x) {
 // window.onload = getColour;
 
 // random colour generator
+
 function getColour () {
   randomColour = colours[Math.floor(Math.random() * colours.length)];
   document.getElementById("colour").textContent = randomColour;
+  document.getElementById("descriptor").textContent = "Button"
   coloursGame()
 }
 
@@ -96,6 +124,7 @@ function getColour () {
 function getNumber () {
   randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
   document.getElementById("colour").textContent = randomNumber;
+  document.getElementById("descriptor").textContent = ""
   numbersGame()
 }
 
@@ -103,14 +132,34 @@ function getNumber () {
 function getFeeling () {
   randomFeeling = feelings[Math.floor(Math.random() * feelings.length)];
   document.getElementById("colour").textContent = randomFeeling;
+  document.getElementById("descriptor").textContent = "Face"
   feelingsGame()
+  
 }
 
 function getLetter () {
   randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
   document.getElementById("colour").textContent = randomLetter;
+  document.getElementById("descriptor").textContent = ""
   alphabetGame()
+
 }
+
+function getFruit () {
+  randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+  document.getElementById("colour").textContent = randomFruit;
+  document.getElementById("descriptor").textContent = ""
+  console.log("random fruit generated")
+  fruitGame()
+}
+
+function getVeg () {
+  randomVeg = vegetables[Math.floor(Math.random() * vegetables.length)];
+  document.getElementById("colour").textContent = randomFruit;
+  document.getElementById("descriptor").textContent = ""
+  vegGame()
+}
+
 const correct = document.getElementById("correct");
 const wrong = document.getElementById("wrong");
 const reset = document.getElementById("reset");
@@ -169,7 +218,14 @@ myTheme()
   } else if (currentGame.includes("alphabet")) {
     getLetter()
     alphabetGame()
-  } else {
+  } else if (currentGame.includes("fruits")) {
+    getFruit()
+    fruitGame()
+  } else if (currentGame.includes("vegetables")) {
+    getVeg()
+    vegGame()
+  } 
+  else {
     console.log('broken')
   }
   
@@ -255,6 +311,14 @@ function alphabetGame () {
   letterButtons.onclick=buton;
 }
 
+function fruitGame () {
+ fruitButtons.onclick=buton;
+}
+
+function vegGame () {
+  vegButtons.onclick=buton;
+ }
+
 function buton(e) {
   if (dropdownMonsters.classList.contains("active")) {
 getMonster()
@@ -276,8 +340,11 @@ getMonster()
       feelingButtons.style.display = "none";
      } else if (currentGame.includes("alphabet")) {
        letterButtons.style.display= "none";
-     }
-
+     } else if (currentGame.includes("fruits")) {
+      fruitButtons.style.display= "none";
+     } else if (currentGame.includes("vegetables")) {
+      vegButtons.style.display= "none";
+    }
       instruction.style.display ="none"
       allTheDropDownOptions.style.display = "none";
     } else {
@@ -308,6 +375,13 @@ reset.addEventListener("click", function () {
   } else if (currentGame.includes("alphabet")) {
     getLetter()
     letterButtons.style.display="block";
+  } 
+  else if (currentGame.includes("fruits")) {
+    getFruit()
+    fruitButtons.style.display="block";
+  } else if (currentGame.includes("vegetables")) {
+    getVeg()
+    vegButtons.style.display="block";
   } 
   else {
     console.log('broken')
