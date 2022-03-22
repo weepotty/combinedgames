@@ -155,7 +155,7 @@ function getFruit () {
 
 function getVeg () {
   randomVeg = vegetables[Math.floor(Math.random() * vegetables.length)];
-  document.getElementById("colour").textContent = randomFruit;
+  document.getElementById("colour").textContent = randomVeg;
   document.getElementById("descriptor").textContent = ""
   vegGame()
 }
