@@ -77,6 +77,13 @@ app.get("/flowers", (req, res) => {
   res.render("flowers", {currentPage, games});
 });
 
+app.get("/contact", (req, res) => {
+  str = req.url
+  current = str.slice(1)
+  currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+  
+  res.render("contact", {currentPage, games});
+});
 
 
 
