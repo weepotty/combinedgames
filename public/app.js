@@ -247,6 +247,14 @@ myTheme()
           getMonster();
         })
         break;
+        case (theme.id === "dogs"): document.getElementById("dropdownDogs").classList.remove("is-hidden");document.getElementById("dropdownDogs").classList.add("active"); getDog(); reset.addEventListener("click", function () {
+          getDog();
+        })
+        break;
+        case (theme.id === "bears"): document.getElementById("dropdownBears").classList.remove("is-hidden");document.getElementById("dropdownBears").classList.add("active"); getBear(); reset.addEventListener("click", function () {
+          getBear();
+        })
+        break;
         
     
     default:console.log("error in switch")
@@ -254,6 +262,8 @@ myTheme()
 
     }   
 const dropdownMonsters = document.getElementById("dropdownMonsters")
+const dropdownDogs = document.getElementById("dropdownDogs")
+const dropdownBears = document.getElementById("dropdownBears")
 const newTheme = document.getElementById("newTheme")
 
 
@@ -278,6 +288,13 @@ const monsters = [
   "monster1", "monster2", "monster3", "monster4", "monster5", "monster6", "monster7", "monster8", "monster9", "monster10"
 ];
 
+const dogs = [
+  "dog1", "dog2", "dog3", "dog4", "dog5", "dog6", "dog7", "dog8", "dog9", "dog10", "dog11", "dog12", "dog13", "dog14", "dog15", "dog16", "dog17"
+];
+
+const bears = ["bear1", "bear2", "bear3", "bear4", "bear5", "bear6", "bear7", "bear8", "bear9", "bear10", "bear11", "bear12", "bear13", "bear14", "bear15", "bear16", "bear17", "bear18"]
+
+
 function getMonster () {
   {
     randomMonster = monsters[Math.floor(Math.random() * monsters.length)];
@@ -285,6 +302,24 @@ function getMonster () {
     
   }
 }
+
+
+function getDog() {
+  {
+    randomDog= dogs[Math.floor(Math.random() * dogs.length)];
+    document.getElementById("animalImage").src = `images/${randomDog}.png`;
+    
+  }
+}
+
+function getBear() {
+  {
+    randomBear= bears[Math.floor(Math.random() * bears.length)];
+    document.getElementById("animalImage").src = `images/${randomBear}.png`;
+    
+  }
+}
+
 
 
 function movePanel () {
@@ -322,6 +357,10 @@ function vegGame () {
 function buton(e) {
   if (dropdownMonsters.classList.contains("active")) {
 getMonster()
+  } else if (dropdownDogs.classList.contains("active")) {
+    getDog()
+  } else if (dropdownBears.classList.contains("active")) {
+    getBear()
   } else {
   getStickerChoice()}
   
@@ -364,7 +403,6 @@ reset.addEventListener("click", function () {
     getColour()
     colourButtons.style.display = "block";
 
-   
   } else if (currentGame.includes("numbers")) {
     getNumber()
     numberButtons.style.display = "block";
