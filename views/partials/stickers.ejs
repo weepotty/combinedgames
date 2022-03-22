@@ -15,7 +15,7 @@
     <section id="dropdownAnimals" class="stickerTheme pt-0">
       <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
       <select class="has-text-centered chooseSticker" id="dropdownAnimalsSelect" onchange="movePanel()">
-        <!-- <option value="bear">Choose</option> -->
+        <option value="random-animals">random</option>
         <option value="bear">Bear</option>
         <option value="giraffe">Giraffe</option>
         <option value="mouse">Mouse</option>
@@ -39,6 +39,7 @@
         <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
       <select id="dropdownVehiclesSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
         <!-- <option value="tractor">Choose</option> -->
+        <option value="random-vehicles">random</option>
         <option value="tractor">Tractor</option>
         <option value="digger">Digger</option>
         <option value="airplane">Airplane</option>
@@ -65,6 +66,7 @@
   <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
   <select id="dropdownDinosaursSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
     <!-- <option value="velociraptor">Choose</option> -->
+    <option value="random-dinosaurs">random</option>
     <option value="velociraptor">Velociraptor</option>
     <option value="t-rex">T-rex</option>
     <option value="stegosaurus">Stegosaurus</option>
@@ -81,6 +83,7 @@
   <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
   <select id="dropdownEnchantedSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
     <!-- <option value="owl">Choose</option> -->
+    <option value="random-enchanted">random</option>
     <option value="owl">Owl</option>
     <option value="squirrel">Squirrel</option>
     <option value="toadstool">Toadstool</option>
@@ -89,6 +92,9 @@
     <option value="fairy">Fairy</option>
     <option value="gnome">Gnome</option>
     <option value="unicorn">Unicorn</option>
+    <option value="dragon">Dragon</option>
+    <option value="witch">Witch</option>
+    <option value="potion">Potion</option>
   </select>
 </section>
 
@@ -96,7 +102,7 @@
 <section id="dropdownUnderTheSea" class=" is-hidden stickerTheme">
   <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
   <select id="dropdownUnderTheSeaSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
-    <!-- <option value="seahorse">Choose</option> -->
+    <option value="random-underTheSea">random</option>
     <option value="seahorse">Seahorse</option>
     <option value="starfish">Starfish</option>
     <option value="prawn">Prawn</option>
@@ -111,6 +117,27 @@
     <option value="mermaid">Mermaid</option>
     <option value="submarine">Submarine</option>
     <option value="octopus">Octopus</option>
+    
+  </select>
+</section>
+
+<!-- space theme dropdown -->
+<section id="dropdownSpace" class=" is-hidden stickerTheme">
+  <label for="list" class="is-size-6 has-text-white">Choose a sticker: </label>
+  <select id="dropdownSpaceSelect" class=" has-text-centered chooseSticker" onchange="movePanel()">
+    <option value="random-space">random</option>
+    <option value="earth">Earth</option>
+    <option value="mars">Mars</option>
+    <option value="venus">Venus</option>
+    <option value="mercury">Mercury</option>
+    <option value="uranus">Uranus</option>
+    <option value="jupiter">Jupiter</option>
+    <option value="saturn">Saturn</option>
+    <option value="pluto">Pluto</option>
+    <option value="galaxy">Galaxy</option>
+    <option value="milkyway">Milky Way</option>
+    <option value="astronaut">Astronaut</option>
+    <option value="rocket">Rocket</option>
     
   </select>
 </section>

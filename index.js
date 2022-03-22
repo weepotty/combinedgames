@@ -69,6 +69,16 @@ app.get("/vegetables", (req, res) => {
 });
 
 
+app.get("/flowers", (req, res) => {
+  str = req.url
+  current = str.slice(1)
+  currentPage = current.charAt(0).toUpperCase() + current.slice(1)
+  
+  res.render("flowers", {currentPage, games});
+});
+
+
+
 
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

@@ -37,7 +37,6 @@ const feelings = [
   "Tired",
 ]
 
-
 const alphabet = [
   "a",
   "b",
@@ -92,8 +91,19 @@ const vegetables = [
   "onion",
   "peas",
   "potato",
-  "radish",
-]
+  "radish"]
+  
+  const flowers = [
+    "rose",
+    "daffodil",
+    "sakura",
+    "lavender",
+    "tulips",
+    "poppy",
+    "orchid",
+    "sunflower",
+    "daisy",
+  ]
 //code for change in opacity on hovering
 function reduceOpacity(x) {
   x.style.opacity = 0.8;
@@ -112,6 +122,8 @@ function normalOpacity(x) {
 // window.onload = getColour;
 
 // random colour generator
+
+
 
 function getColour () {
   randomColour = colours[Math.floor(Math.random() * colours.length)];
@@ -160,6 +172,13 @@ function getVeg () {
   vegGame()
 }
 
+function getFlower () {
+  randomFlower = flowers[Math.floor(Math.random() * flowers.length)];
+  document.getElementById("colour").textContent = randomFlower;
+  document.getElementById("descriptor").textContent = ""
+  flowerGame()
+}
+
 const correct = document.getElementById("correct");
 const wrong = document.getElementById("wrong");
 const reset = document.getElementById("reset");
@@ -196,7 +215,6 @@ let chooseSticker = document.getElementsByClassName("chooseSticker")
     }
   }
 
-
 }
 
 
@@ -224,8 +242,10 @@ myTheme()
   } else if (currentGame.includes("vegetables")) {
     getVeg()
     vegGame()
-  } 
-  else {
+  } else if (currentGame.includes("flowers")) {
+    getFlower()
+    flowerGame()
+  } else {
     console.log('broken')
   }
   
@@ -242,6 +262,8 @@ myTheme()
         case (theme.id === "enchanted"): document.getElementById("dropdownEnchanted").classList.remove("is-hidden"); document.getElementById("dropdownEnchantedSelect").classList.add("active")
         break;
         case (theme.id === "underTheSea"): document.getElementById("dropdownUnderTheSea").classList.remove("is-hidden"); document.getElementById("dropdownUnderTheSeaSelect").classList.add("active")
+       break;
+       case (theme.id === "space"): document.getElementById("dropdownSpace").classList.remove("is-hidden"); document.getElementById("dropdownSpaceSelect").classList.add("active")
        break;
         case (theme.id === "monsters"): document.getElementById("dropdownMonsters").classList.remove("is-hidden");document.getElementById("dropdownMonsters").classList.add("active"); getMonster(); reset.addEventListener("click", function () {
           getMonster();
@@ -275,12 +297,80 @@ myTheme()
 })
 
 
-// choosing sticker from dropdown
+
+// code for random generators 
+
+const animals=[]
+const vehicles=[]
+const dinosaurs = []
+const enchanted = []
+const underTheSea=[]
+const space=[]
+
+const dropdownAnimalsSelect = document.getElementById("dropdownAnimalsSelect")
+for (let e of dropdownAnimalsSelect) {
+ animals.push(e.value)
+}
+
+const dropdownVehiclesSelect = document.getElementById("dropdownVehiclesSelect")
+for (let e of dropdownVehiclesSelect) {
+ vehicles.push(e.value)
+}
+
+const dropdownDinosaursSelect = document.getElementById("dropdownDinosaursSelect")
+for (let e of dropdownDinosaursSelect) {
+ dinosaurs.push(e.value)
+}
+
+const dropdownEnchantedSelect = document.getElementById("dropdownEnchantedSelect")
+for (let e of dropdownEnchantedSelect) {
+ enchanted.push(e.value)
+}
+
+const dropdownUnderTheSeaSelect = document.getElementById("dropdownUnderTheSeaSelect")
+for (let e of dropdownUnderTheSeaSelect) {
+  underTheSea.push(e.value)
+}
+
+
+const dropdownSpaceSelect = document.getElementById("dropdownSpaceSelect")
+for (let e of dropdownSpaceSelect) {
+ space.push(e.value)
+}
+
+
+const themesArray = []
+// function hello () {
+  let themes = document.getElementsByClassName("themes")
+for (let t of themes) {
+themesArray.push(t.id)
+} 
+// }
+
 
 function getStickerChoice () {
   let stickerChoice = document.querySelector('select.active').value
+
+
+if (stickerChoice.includes("random")) {
+  
+  for (let t of themesArray) {
+  if (stickerChoice === `random-${t}`) {
+      eval(`t=${t}`)
+      const stickerOptions = t.slice(1)
+      randomSticker=stickerOptions[Math.floor(Math.random()* stickerOptions.length)]
+      document.getElementById("animalImage").src = `images/${randomSticker}.png`
+      // document.getElementById("animalImage").src = `images/${randomSticker}.png`    
+     
+  //   randomSticker = t[Math.floor(Math.random() * t.length)];
+  // console.log(randomSticker)
+  } 
+}}
+  else {
   document.getElementById("animalImage").src = `images/${stickerChoice}.png`;
-}
+}}
+
+
 
 
 //random monster generator
@@ -295,11 +385,13 @@ const dogs = [
 const bears = ["bear1", "bear2", "bear3", "bear4", "bear5", "bear6", "bear7", "bear8", "bear9", "bear10", "bear11", "bear12", "bear13", "bear14", "bear15", "bear16", "bear17", "bear18"]
 
 
+
+
+
 function getMonster () {
   {
     randomMonster = monsters[Math.floor(Math.random() * monsters.length)];
     document.getElementById("animalImage").src = `images/${randomMonster}.png`;
-    
   }
 }
 
@@ -308,7 +400,6 @@ function getDog() {
   {
     randomDog= dogs[Math.floor(Math.random() * dogs.length)];
     document.getElementById("animalImage").src = `images/${randomDog}.png`;
-    
   }
 }
 
@@ -316,10 +407,8 @@ function getBear() {
   {
     randomBear= bears[Math.floor(Math.random() * bears.length)];
     document.getElementById("animalImage").src = `images/${randomBear}.png`;
-    
   }
 }
-
 
 
 function movePanel () {
@@ -353,6 +442,9 @@ function fruitGame () {
 function vegGame () {
   vegButtons.onclick=buton;
  }
+ function flowerGame () {
+  flowerButtons.onclick=buton;
+ }
 
 function buton(e) {
   if (dropdownMonsters.classList.contains("active")) {
@@ -383,9 +475,12 @@ getMonster()
       fruitButtons.style.display= "none";
      } else if (currentGame.includes("vegetables")) {
       vegButtons.style.display= "none";
+    } else if (currentGame.includes("flowers")) {
+      flowerButtons.style.display= "none";
     }
       instruction.style.display ="none"
       allTheDropDownOptions.style.display = "none";
+      
     } else {
       wrong.style.display = "block";
       correct.style.display = "none";
@@ -420,6 +515,9 @@ reset.addEventListener("click", function () {
   } else if (currentGame.includes("vegetables")) {
     getVeg()
     vegButtons.style.display="block";
+  } else if (currentGame.includes("flowers")) {
+    getFlower()
+    flowerButtons.style.display="block";
   } 
   else {
     console.log('broken')
