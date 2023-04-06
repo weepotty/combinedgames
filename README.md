@@ -12,18 +12,6 @@
 
 ### ✨ [Demo](https://combinedgames.herokuapp.com/)
 
-## Install
-
-```sh
-npm install
-```
-
-## Usage
-
-```sh
-npm run start
-```
-
 ## Author
 
 👤 **shona**
