@@ -9,7 +9,7 @@ i built this game for my daughter when she was a toddler. i was trying to teach 
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> 
 I used vanilla JS and pure CSS (no bootstrap) to practise the fundamentals. This project was key in getting familiar with the DOM, and basic but important things like naming variables and functions sensibly.
 
-<img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> This was the first project I ever deployed to Heroku (and maybe deployed, ever). Learned about the process of doing that, linking it to my github and setting it to continuous deploy eventually, but prior to that understanding the difference between local/remote repositories on github/heroku.
+<img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> This was the first project I ever deployed to Heroku (and maybe deployed, ever). Learned about how to deploy to Heroku from the command line, understanding the difference between local/remote repositories on github/heroku, and then eventually automatically deploying through Github.
 
 ## Author
 
