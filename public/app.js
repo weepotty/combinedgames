@@ -75,7 +75,6 @@ const fruits = [
   "lemon",
   "mangosteen",
   "grapes",
-  "orange",
   "pear",
   "pineapple",
   "strawberry",
